@@ -22,6 +22,7 @@ public class playerMovement : MonoBehaviour {
 
 	public Vector3 respawnPoint;
 
+	public GameObject stompBox;
 
 
 
@@ -72,6 +73,14 @@ public class playerMovement : MonoBehaviour {
 		//animace hrace
 			myAnim.SetFloat ("Speed", Mathf.Abs (myRigidBody.velocity.x));
 			myAnim.SetBool ("Grounded", isGrounded);
+
+		if (myRigidBody.velocity.y < 0) 
+		{
+			stompBox.SetActive (true);
+		} else 
+		{
+			stompBox.SetActive (false);
+		}
 
 
 	}
