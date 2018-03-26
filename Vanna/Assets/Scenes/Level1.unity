@@ -568,6 +568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
   damageToGive: 3
+  bounceForce: 0
+  thePlayer: {fileID: 1005347739}
 --- !u!61 &533223478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1290,6 +1292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
   damageToGive: 3
+  bounceForce: 3
+  thePlayer: {fileID: 1005347739}
 --- !u!1 &920050345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,6 +2050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
   damageToGive: 1
+  bounceForce: 0
+  thePlayer: {fileID: 1005347739}
 --- !u!61 &1840799695
 BoxCollider2D:
   m_ObjectHideFlags: 0
