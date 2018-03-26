@@ -22,8 +22,8 @@ public class destroyingEnemy : MonoBehaviour {
 	{
 		if (other.tag == "Enemy") 
 		{
-			
-			Destroy (other.gameObject);
+			other.gameObject.SetActive(false);
+			//Destroy (other.gameObject);
 			playerRigidbody.velocity = new Vector3 (playerRigidbody.velocity.x, bounceForce, 0f);
 		}
 			

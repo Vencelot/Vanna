@@ -434,7 +434,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300714, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
+  m_Sprite: {fileID: 21300716, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 533223478}
   - component: {fileID: 533223477}
   - component: {fileID: 533223476}
+  - component: {fileID: 533223483}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -568,7 +569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
   damageToGive: 3
-  bounceForce: 0
+  bounceForce: 3
   thePlayer: {fileID: 1005347739}
 --- !u!61 &533223478
 BoxCollider2D:
@@ -701,6 +702,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &533223483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 533223474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faab762351de704e9c629744f426b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &617160620
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +795,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300714, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
+  m_Sprite: {fileID: 21300718, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1115,6 +1127,7 @@ GameObject:
   - component: {fileID: 850455267}
   - component: {fileID: 850455268}
   - component: {fileID: 850455274}
+  - component: {fileID: 850455275}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -1150,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159a9bc371979f44296e73fe2091a831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 0.75
   canMove: 0
 --- !u!50 &850455269
 Rigidbody2D:
@@ -1273,8 +1286,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 850455266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.866, y: -0.199, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.05}
+  m_LocalPosition: {x: -0.8054, y: -0.1384, z: 0}
+  m_LocalScale: {x: 0.37123662, y: 0.37123662, z: 0.07424732}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -1294,6 +1307,17 @@ MonoBehaviour:
   damageToGive: 3
   bounceForce: 3
   thePlayer: {fileID: 1005347739}
+--- !u!114 &850455275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 850455266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faab762351de704e9c629744f426b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920050345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,10 +1423,11 @@ MonoBehaviour:
   fullHeart: {fileID: 21300714, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
   halfHeart: {fileID: 21300716, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
   emptyHeart: {fileID: 21300718, guid: c37351dbc979635429f9904fbc1bdc8f, type: 3}
-  maxHealth: 6
+  maxHealth: 3
   healthCount: 0
   respawning: 0
   currentBoxCollider2D: {fileID: 1005347742}
+  objectsToReset: []
 --- !u!4 &947559308
 Transform:
   m_ObjectHideFlags: 0
@@ -1928,6 +1953,7 @@ GameObject:
   - component: {fileID: 1793885353}
   - component: {fileID: 1793885352}
   - component: {fileID: 1793885355}
+  - component: {fileID: 1793885356}
   m_Layer: 0
   m_Name: shard(test)
   m_TagString: Untagged
@@ -2019,6 +2045,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyCrystalsValue: 1
+--- !u!114 &1793885356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793885351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faab762351de704e9c629744f426b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1840799693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
   damageToGive: 1
-  bounceForce: 0
+  bounceForce: 3
   thePlayer: {fileID: 1005347739}
 --- !u!61 &1840799695
 BoxCollider2D:

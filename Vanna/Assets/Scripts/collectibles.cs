@@ -25,8 +25,10 @@ public class collectibles : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
+			gameObject.SetActive(false);
 			myLevelManager.AddCrystals (energyCrystalsValue); 	//pridani hodnoty krystalu
-			Destroy(gameObject);								//zniceni objektu
+			//Destroy(gameObject);								//zniceni objektu
+
 		}
 	}
 }

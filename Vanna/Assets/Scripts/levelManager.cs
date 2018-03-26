@@ -27,13 +27,15 @@ public class levelManager : MonoBehaviour {
 	public bool respawning;
 	public BoxCollider2D currentBoxCollider2D;
 
+	public resetOnRespawn [] objectsToReset;
+
 	// Use this for initialization
 	void Start () {
 		thePlayer = FindObjectOfType <playerMovement> ();
 		currentBoxCollider2D = thePlayer.GetComponent<BoxCollider2D> ();
 		energyCrystalText.text = " ";
 		healthCount = maxHealth;
-
+		objectsToReset = FindObjectsOfType<resetOnRespawn> ();
 	
 
 		
@@ -65,15 +67,23 @@ public class levelManager : MonoBehaviour {
 
 			yield return new WaitForSeconds(waitToRespawn);		//čekání vyměřeného času
 			
-			healthCount = maxHealth;
+			healthCount = maxHealth;							//obnovení životu
 			respawning	= false;
+			energyCrystalText.text = " ";
+			energyCrystalsCount = 0;
 			updateHeartMeter ();
 			
 			
 			
 
 			thePlayer.transform.position = thePlayer.respawnPoint; 	//respawnuti hrace na miste checkpointu
-			thePlayer.gameObject.SetActive (true);					//opetne aktivovani hrace
+			thePlayer.gameObject.SetActive (true);					//opetne aktivovani hrace+
+
+		for(int i = 0; i < objectsToReset.Length; i++)
+			{
+				objectsToReset[i].gameObject.SetActive(true);
+				objectsToReset[i].ResetObject();
+			}
 		}
 		
 	public void AddCrystals(int energyCrystalsToAdd)				//zapocitani a vypsani poctu sebranych krystalu
