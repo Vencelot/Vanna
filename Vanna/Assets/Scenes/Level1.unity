@@ -959,6 +959,16 @@ Prefab:
       propertyPath: stompBox
       value: 
       objectReference: {fileID: 243871632}
+    - target: {fileID: 114375221246029938, guid: a3404085be92e3a47aefaf2554c3a151,
+        type: 2}
+      propertyPath: knockbackForce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114375221246029938, guid: a3404085be92e3a47aefaf2554c3a151,
+        type: 2}
+      propertyPath: knocbackLength
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61223643159408260, guid: a3404085be92e3a47aefaf2554c3a151, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a3404085be92e3a47aefaf2554c3a151, type: 2}
@@ -2086,7 +2096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevelManager: {fileID: 947559307}
-  damageToGive: 1
+  damageToGive: 6
   bounceForce: 3
   thePlayer: {fileID: 1005347739}
 --- !u!61 &1840799695

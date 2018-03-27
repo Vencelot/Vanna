@@ -10,12 +10,12 @@ public class hurtPlayer : MonoBehaviour {
 
 	public GameObject thePlayer;
 
-	private Rigidbody2D myRigidBody;
+
 
 	// Use this for initialization
 	void Start () {
 		myLevelManager = FindObjectOfType<levelManager> ();
-		myRigidBody = thePlayer.gameObject.GetComponent<Rigidbody2D> ();
+
 		
 	}
 	
@@ -30,7 +30,7 @@ public class hurtPlayer : MonoBehaviour {
 			{
 				//myLevelManager.Respawn ();
 				myLevelManager.HurtPlayer(damageToGive);
-				myRigidBody.velocity = new Vector3 (myRigidBody.velocity.x, bounceForce, 0f);
+				
 			}
 		}	
 }

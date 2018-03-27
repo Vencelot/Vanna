@@ -96,6 +96,7 @@ public class levelManager : MonoBehaviour {
 	{
 		healthCount -= damageToTake;					//odeberani zivotu
 		updateHeartMeter ();
+		thePlayer.Knockback (); 						//volani funkce knockback pri zraneni hrace
 	}
 
 	public void updateHeartMeter()			//zmena sprite image srdce
