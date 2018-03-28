@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour {
 
 	public float knockbackForce;
 	public float knocbackLength;
-	private float knockbackCounter;
+	public float knockbackCounter;
 
 
 

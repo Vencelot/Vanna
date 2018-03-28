@@ -48,7 +48,7 @@ public class levelManager : MonoBehaviour {
 			Respawn ();
 			respawning = true;
 			currentBoxCollider2D.size = new Vector3 (0.19f,0.38f,0f);
-			currentBoxCollider2D.offset = new Vector3 (-0.1f, -0.02f, 0f);
+			currentBoxCollider2D.offset = new Vector3 (0.02f, -0.02f, 0f);
 
 		}
 	
@@ -71,6 +71,8 @@ public class levelManager : MonoBehaviour {
 			respawning	= false;
 			energyCrystalText.text = " ";
 			energyCrystalsCount = 0;
+			healthCount = 3;
+			thePlayer.knockbackCounter = 0;
 			updateHeartMeter ();
 			
 			
@@ -90,6 +92,17 @@ public class levelManager : MonoBehaviour {
 	{
 		energyCrystalsCount += energyCrystalsToAdd;					//zapocitani soucasneho poctu krystalu
 		energyCrystalText.text = "      " + energyCrystalsCount;	//vypsani poctu
+	}
+
+	public void BonusHeart (int healthToGive)
+	{
+		healthCount += healthToGive;
+
+		if (healthCount > maxHealth) 
+		{
+			healthCount = maxHealth;
+		}
+		updateHeartMeter ();
 	}
 
 	public void HurtPlayer(int damageToTake)			//odebirani zivotu hraci

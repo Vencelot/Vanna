@@ -8,6 +8,7 @@ TagManager:
   - Checkpoint
   - MovingPlatform
   - Enemy
+  - Konec
   layers:
   - Default
   - TransparentFX
@@ -45,12 +46,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 3115537309
-    locked: 0
   - name: Ground
     uniqueID: 4259020811
     locked: 0
+  - name: mapa
+    uniqueID: 1684143161
+    locked: 0
+  - name: Collectibles
+    uniqueID: 2198214209
+    locked: 0
   - name: WorldObject
     uniqueID: 1464165551
+    locked: 0
+  - name: Player
+    uniqueID: 3115537309
     locked: 0
