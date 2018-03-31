@@ -12,6 +12,7 @@ public class levelManager : MonoBehaviour {
 
 
 	public Text energyCrystalText;
+	public Text livesText;
 
 	public Image heart1;
 	public Image heart2;
@@ -23,19 +24,32 @@ public class levelManager : MonoBehaviour {
 
 	public int maxHealth;
 	public int healthCount;
+	public int maxLives;
+	public int currentLives;
 
 	public bool respawning;
 	public BoxCollider2D currentBoxCollider2D;
+	//public CircleCollider2D currentCircleCollider2D;
 
 	public resetOnRespawn [] objectsToReset;
+
+	public afterBatEffects myAfterBatEffects;
+	public batActive myBatActive;
+	public newLevelEnter myNewLevelEnter;
 
 	// Use this for initialization
 	void Start () {
 		thePlayer = FindObjectOfType <playerMovement> ();
 		currentBoxCollider2D = thePlayer.GetComponent<BoxCollider2D> ();
+		//currentCircleCollider2D = thePlayer.GetComponent<CircleCollider2D> ();
 		energyCrystalText.text = " ";
-		healthCount = maxHealth;
+		healthCount = 3;
+		livesText.text = " " + maxLives;
+		currentLives = maxLives;
 		objectsToReset = FindObjectsOfType<resetOnRespawn> ();
+		myAfterBatEffects = FindObjectOfType<afterBatEffects> ();
+		myBatActive = FindObjectOfType<batActive> ();
+		myNewLevelEnter = FindObjectOfType<newLevelEnter> ();
 	
 
 		
@@ -49,15 +63,25 @@ public class levelManager : MonoBehaviour {
 			respawning = true;
 			currentBoxCollider2D.size = new Vector3 (0.19f,0.38f,0f);
 			currentBoxCollider2D.offset = new Vector3 (0.02f, -0.02f, 0f);
+			//currentCircleCollider2D.radius = 0.1f;
+			//currentCircleCollider2D.offset = new Vector3 (-0.01f, -0.1f, 0f);
 
 		}
 	
 			
 	}
 
-	public void Respawn () {
+	public void Respawn () 
+	{
+		currentLives -= 1;
+		livesText.text = " " + currentLives;
 
-		StartCoroutine (RespawnCo());
+		if (currentLives > 0) {
+			StartCoroutine (RespawnCo ());
+		} else 
+		{
+			thePlayer.gameObject.SetActive (false);
+		}
 
 	}
 
@@ -74,6 +98,14 @@ public class levelManager : MonoBehaviour {
 			healthCount = 3;
 			thePlayer.knockbackCounter = 0;
 			updateHeartMeter ();
+		if (myNewLevelEnter.level2Enter == true) 
+			{
+				myAfterBatEffects.caveSpikes.SetActive (true);
+				myAfterBatEffects.movingPlatform.SetActive (false);
+				myBatActive.batActivated = false;
+			}
+			
+			
 			
 			
 			

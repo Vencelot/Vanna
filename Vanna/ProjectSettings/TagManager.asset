@@ -46,18 +46,51 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 4259020811
+  - name: Sky
+    uniqueID: 1135272041
     locked: 0
-  - name: mapa
-    uniqueID: 1684143161
+  - name: Background
+    uniqueID: 2768948883
+    locked: 0
+  - name: Sun
+    uniqueID: 1897144333
+    locked: 0
+  - name: Trees
+    uniqueID: 1543890349
     locked: 0
   - name: Collectibles
     uniqueID: 2198214209
     locked: 0
-  - name: WorldObject
+  - name: Clouds
+    uniqueID: 3766114119
+    locked: 0
+  - name: CaveSpikes
+    uniqueID: 252036645
+    locked: 0
+  - name: Bats
+    uniqueID: 415798727
+    locked: 0
+  - name: Enemy
     uniqueID: 1464165551
+    locked: 0
+  - name: Map
+    uniqueID: 1684143161
+    locked: 0
+  - name: Cave1
+    uniqueID: 2022371621
+    locked: 0
+  - name: Danger
+    uniqueID: 3213904351
     locked: 0
   - name: Player
     uniqueID: 3115537309
+    locked: 0
+  - name: Pipe
+    uniqueID: 180616655
+    locked: 0
+  - name: Cave2
+    uniqueID: 3069199797
+    locked: 0
+  - name: Bat2
+    uniqueID: 2561705583
     locked: 0
